@@ -1,4 +1,4 @@
-package org.valhallamc.cme_fix;
+package org.valhallamc.entityguardian;
 
 import com.mojang.logging.LogUtils;
 import net.neoforged.bus.api.IEventBus;
@@ -11,16 +11,16 @@ import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
-@Mod(entitysectionmanager_cme_fix.MODID)
-public class entitysectionmanager_cme_fix {
+@Mod(EntityGuardian.MODID)
+public class EntityGuardian {
     // Define mod id in a common place for everything to reference
-    public static final String MODID = "cme_fix";
+    public static final String MODID = "entityguardian";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
-    public entitysectionmanager_cme_fix(IEventBus modEventBus, ModContainer modContainer) {
+    public EntityGuardian(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -29,14 +29,14 @@ public class entitysectionmanager_cme_fix {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        // Initialize EntitySectionManager CME Fix
-        LOGGER.info("EntitySectionManager CME Fix loaded - fixing PersistentEntitySectionManager concurrent modification issues");
+        // Initialize EntityGuardian
+        LOGGER.info("EntityGuardian loaded - fixing PersistentEntitySectionManager concurrent modification issues");
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
-        // Log when server starts with CME fix active
-        LOGGER.info("Server starting with EntitySectionManager CME Fix active");
+        // Log when server starts with EntityGuardian active
+        LOGGER.info("Server starting with EntityGuardian active");
     }
 }

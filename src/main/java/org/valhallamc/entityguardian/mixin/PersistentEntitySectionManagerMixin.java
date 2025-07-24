@@ -1,4 +1,4 @@
-package org.valhallamc.cme_fix.mixin;
+package org.valhallamc.entityguardian.mixin;
 
 import net.minecraft.world.level.entity.PersistentEntitySectionManager;
 import org.spongepowered.asm.mixin.Mixin;
